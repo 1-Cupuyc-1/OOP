@@ -1,9 +1,13 @@
-﻿class Class0 <T>
+﻿class Class0 <T> where T: Class1 
 {
-    public T field { get; set; }
-    public Class0(T field)
+    public T? field;
+    public Class0(T? field)
     {
         this.field = field;
     }
-    public void PrintTypeField() => Console.WriteLine($"{field.GetType().Name} field");
+
+    public void PrintTypeField()
+    {
+        if(field != null) Console.WriteLine($"{field.GetType().Name} field");
+    }
 }
